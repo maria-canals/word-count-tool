@@ -1,9 +1,18 @@
-let button = document.getElementById('btn');
+const Words = {
+  data() {
+    return {
+      input: "",
+      result: "",
+    };
+  },
+  methods: {
+    getInput(e) {
+      this.input = e.target.value;
+    },
+    calculateLength() {
+      this.result = this.input.length;
+    },
+  },
+};
 
-button.addEventListener('click', function(){
-    let word = document.getElementById('str').value;
-    let count = word.length;
-    let outputDiv = document.getElementById('output');
-
-    outputDiv.innerHTML = `<h1>${count}</h1>`
-});
+Vue.createApp(Words).mount("#container");
